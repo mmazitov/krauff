@@ -1,0 +1,119 @@
+/* TYPOGRAPHY */
+
+@import '../sass/_variables.scss';
+@import '../sass/_sprite-icons.scss';
+@import '../sass/_sprite-menu.scss';
+@import '../sass/_mixins&includes.scss';
+body {
+  background: $main_bg;
+  font-family: $helvetica;
+  font-size: $xmd_fs;
+  font-weight: normal;
+  line-height: 24px;
+  color: $main_color;
+  -webkit-font-smoothing: antialiased;
+  width: 100%;
+  min-width: 1020px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 500;
+  padding: 0 0 10px;
+  color: $main_color;
+}
+
+h1 {
+  font-size: $xlg_fs;
+  line-height: 43px;
+  text-transform: uppercase;
+
+  @extend .bold;
+  position: relative;
+  padding: 0 0 31px;
+}
+
+h2 {
+  padding: 0 0 35px;
+  font-size: $lg_fs;
+  text-transform: uppercase;
+  @extend .bold;
+
+}
+
+h3 {
+  font-size: $xmd_fs;
+  text-transform: uppercase;
+  @extend .bold;
+  // font-family: $kelson;
+
+  padding: 0 0 20px;
+}
+
+h4 {
+  font-size: $md_fs;
+  padding: 0 0 15px;
+  line-height: 22px;
+  @extend .bold;
+  // font-family: $roboto;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+h5 {
+  font-size: $sm_fs;
+  // font-family: $roboto;
+
+  line-height: 24px;
+  padding: 0 0 10px;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+h6 {
+  font-size: $sm_fs;
+}
+
+p {
+  color: $main_color;
+  font-size: $sm_fs;
+  line-height: 24px;
+  padding: 0 0 35px;
+  &:last-child {
+    padding: 0;
+  }
+}
+
+hr {
+  overflow: hidden;
+  border: 0;
+  margin-bottom: 0px;
+  width: 899px;
+  height: 1px;
+  background: #98989b;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+a {
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+  // color: $white_color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

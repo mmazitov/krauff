@@ -1,0 +1,98 @@
+
+$icon-fb-active-name: 'icon-fb-active';
+$icon-fb-active-x: 0px;
+$icon-fb-active-y: 28px;
+$icon-fb-active-offset-x: 0px;
+$icon-fb-active-offset-y: -28px;
+$icon-fb-active-width: 8px;
+$icon-fb-active-height: 16px;
+$icon-fb-active-total-width: 20px;
+$icon-fb-active-total-height: 76px;
+$icon-fb-active-image: '../img/sprite-socials.png';
+$icon-fb-active: (0px, 28px, 0px, -28px, 8px, 16px, 20px, 76px, '../img/sprite-socials.png', 'icon-fb-active', );
+$icon-fb-name: 'icon-fb';
+$icon-fb-x: 0px;
+$icon-fb-y: 44px;
+$icon-fb-offset-x: 0px;
+$icon-fb-offset-y: -44px;
+$icon-fb-width: 8px;
+$icon-fb-height: 16px;
+$icon-fb-total-width: 20px;
+$icon-fb-total-height: 76px;
+$icon-fb-image: '../img/sprite-socials.png';
+$icon-fb: (0px, 44px, 0px, -44px, 8px, 16px, 20px, 76px, '../img/sprite-socials.png', 'icon-fb', );
+$icon-twet-active-name: 'icon-twet-active';
+$icon-twet-active-x: 0px;
+$icon-twet-active-y: 0px;
+$icon-twet-active-offset-x: 0px;
+$icon-twet-active-offset-y: 0px;
+$icon-twet-active-width: 18px;
+$icon-twet-active-height: 14px;
+$icon-twet-active-total-width: 20px;
+$icon-twet-active-total-height: 76px;
+$icon-twet-active-image: '../img/sprite-socials.png';
+$icon-twet-active: (0px, 0px, 0px, 0px, 18px, 14px, 20px, 76px, '../img/sprite-socials.png', 'icon-twet-active', );
+$icon-twet-orange-name: 'icon-twet-orange';
+$icon-twet-orange-x: 0px;
+$icon-twet-orange-y: 60px;
+$icon-twet-orange-offset-x: 0px;
+$icon-twet-orange-offset-y: -60px;
+$icon-twet-orange-width: 20px;
+$icon-twet-orange-height: 16px;
+$icon-twet-orange-total-width: 20px;
+$icon-twet-orange-total-height: 76px;
+$icon-twet-orange-image: '../img/sprite-socials.png';
+$icon-twet-orange: (0px, 60px, 0px, -60px, 20px, 16px, 20px, 76px, '../img/sprite-socials.png', 'icon-twet-orange', );
+$icon-twet-name: 'icon-twet';
+$icon-twet-x: 0px;
+$icon-twet-y: 14px;
+$icon-twet-offset-x: 0px;
+$icon-twet-offset-y: -14px;
+$icon-twet-width: 18px;
+$icon-twet-height: 14px;
+$icon-twet-total-width: 20px;
+$icon-twet-total-height: 76px;
+$icon-twet-image: '../img/sprite-socials.png';
+$icon-twet: (0px, 14px, 0px, -14px, 18px, 14px, 20px, 76px, '../img/sprite-socials.png', 'icon-twet', );
+$spritesheet-width: 20px;
+$spritesheet-height: 76px;
+$spritesheet-image: '../img/sprite-socials.png';
+$spritesheet-sprites: ($icon-fb-active, $icon-fb, $icon-twet-active, $icon-twet-orange, $icon-twet, );
+$spritesheet: (20px, 76px, '../img/sprite-socials.png', $spritesheet-sprites, );
+
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

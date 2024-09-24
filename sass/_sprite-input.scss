@@ -1,0 +1,87 @@
+
+$icon-mail-name: 'icon-mail';
+$icon-mail-x: 0px;
+$icon-mail-y: 0px;
+$icon-mail-offset-x: 0px;
+$icon-mail-offset-y: 0px;
+$icon-mail-width: 26px;
+$icon-mail-height: 18px;
+$icon-mail-total-width: 26px;
+$icon-mail-total-height: 72px;
+$icon-mail-image: '../img/sprite-input.png';
+$icon-mail: (0px, 0px, 0px, 0px, 26px, 18px, 26px, 72px, '../img/sprite-input.png', 'icon-mail', );
+$icon-pen-name: 'icon-pen';
+$icon-pen-x: 0px;
+$icon-pen-y: 18px;
+$icon-pen-offset-x: 0px;
+$icon-pen-offset-y: -18px;
+$icon-pen-width: 18px;
+$icon-pen-height: 18px;
+$icon-pen-total-width: 26px;
+$icon-pen-total-height: 72px;
+$icon-pen-image: '../img/sprite-input.png';
+$icon-pen: (0px, 18px, 0px, -18px, 18px, 18px, 26px, 72px, '../img/sprite-input.png', 'icon-pen', );
+$icon-phone-name: 'icon-phone';
+$icon-phone-x: 0px;
+$icon-phone-y: 36px;
+$icon-phone-offset-x: 0px;
+$icon-phone-offset-y: -36px;
+$icon-phone-width: 18px;
+$icon-phone-height: 18px;
+$icon-phone-total-width: 26px;
+$icon-phone-total-height: 72px;
+$icon-phone-image: '../img/sprite-input.png';
+$icon-phone: (0px, 36px, 0px, -36px, 18px, 18px, 26px, 72px, '../img/sprite-input.png', 'icon-phone', );
+$icon-user-name: 'icon-user';
+$icon-user-x: 0px;
+$icon-user-y: 54px;
+$icon-user-offset-x: 0px;
+$icon-user-offset-y: -54px;
+$icon-user-width: 19px;
+$icon-user-height: 18px;
+$icon-user-total-width: 26px;
+$icon-user-total-height: 72px;
+$icon-user-image: '../img/sprite-input.png';
+$icon-user: (0px, 54px, 0px, -54px, 19px, 18px, 26px, 72px, '../img/sprite-input.png', 'icon-user', );
+$spritesheet-width: 26px;
+$spritesheet-height: 72px;
+$spritesheet-image: '../img/sprite-input.png';
+$spritesheet-sprites: ($icon-mail, $icon-pen, $icon-phone, $icon-user, );
+$spritesheet: (26px, 72px, '../img/sprite-input.png', $spritesheet-sprites, );
+
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

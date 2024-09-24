@@ -1,0 +1,33 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4",
+    "imagemin-pngquant": "^4.2.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp.spritesmith": "^4.2.1",
+    "imagemin-jpegtran": "^4.3.0",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-autoprefixer": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-combine-media-queries": "^0.2.0",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp.spritesmith": "^4.2.1",
+    "imagemin-jpegtran": "^4.3.0",
+    "imagemin-pngquant": "^4.2.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
